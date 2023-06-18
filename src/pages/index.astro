@@ -1,6 +1,7 @@
 ---
 import Icon from "astro-icon";
 import Layout from "../layouts/Layout.astro";
+import AboutComponent from "../components/AboutComponent.astro";
 ---
 
 <Layout>
@@ -9,10 +10,12 @@ import Layout from "../layouts/Layout.astro";
     <span class="name"><a onclick="nameClick()">spifory</a></span>
   </span>
 
+  <AboutComponent title="about me" description="me program"></AboutComponent>
+
   <span class="footer-socials">
-    <a href="https://twitter.com/spifory_"><Icon class="icon" name="mdi:twitter" /></a>
-    <a href="https://github.com/spifory"><Icon class="icon" name="mdi:github" /></a>
-    <a href="https://discord.gg/VTPzbjRFpF"><Icon class="icon" name="mdi:discord" /></a>
+    <a href="https://twitter.com/spifory_"><Icon class="icon" name="bi:twitter" /></a>
+    <a href="https://github.com/spifory"><Icon class="icon" name="bi:github" /></a>
+    <a href="https://discord.gg/VTPzbjRFpF"><Icon class="icon" name="bi:discord" /></a>
   </span>
 </Layout>
 <style lang="css">
@@ -40,7 +43,8 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .icon {
-    height: 3rem;
+    height: 3em;
+    padding: 0.3em;
     color: #e6aace;
     transition: 0.1s;
   }
