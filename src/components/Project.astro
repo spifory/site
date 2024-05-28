@@ -1,0 +1,45 @@
+---
+interface Props {
+    name: string;
+    description: string;
+    status?: string;
+    url?: string;
+}
+
+const { name, description, status, url } = Astro.props as Props;
+---
+
+{
+    url ? (
+        <a href={url}>
+            {name}
+            {status && <span class="project-status"> ({status})</span>}
+        </a>
+    ) : (
+        <span>
+            {name} {status && <span class="project-status"> ({status})</span>}
+        </span>
+    )
+}
+
+<p>
+    {description}
+</p>
+
+<style>
+    * {
+        font-size: larger;
+    }
+    a {
+        color: var(--pico-color-purple-650);
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: var(--pico-color-purple-450);
+    }
+
+    .project-status {
+        color: var(--pico-color-purple-250);
+    }
+</style>

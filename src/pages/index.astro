@@ -1,0 +1,200 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
+import Project from '../components/Project.astro';
+import projects from '../projects.json';
+
+const description = 'A backend developer that does stuff :D';
+
+function getAge(year: number) {
+    const current = new Date();
+    const setYear = new Date();
+    setYear.setUTCFullYear(year);
+
+    return current.getUTCFullYear() - setYear.getUTCFullYear();
+}
+---
+
+<Layout title="spifory" description={description}>
+    <article id="me">
+        <header>
+            <div id="small-profile" aria-label="Basic info and links">
+                <Image
+                    src="/spf.png"
+                    alt="spifory avatar"
+                    width="250"
+                    height="250"
+                    loading="eager"
+                />
+                <h1>spifory</h1>
+                <h3>
+                    {description}
+                </h3>
+                <div id="links">
+                    <a href="mailto:spifory@protonmail.com"
+                        ><Icon name="mdi:email" /> email</a
+                    >
+                    <a href="https://twitter.com/spifory_" target="_blank"
+                        ><Icon name="skill-icons:twitter" /> twitter</a
+                    >
+                    <a href="https://github.com/spifory" target="_blank"
+                        ><Icon name="skill-icons:github-light" /> github</a
+                    >
+                    <a href="https://discord.gg/VTPzbjRFpF" target="_blank"
+                        ><Icon name="skill-icons:discord" /> discord
+                    </a>
+                    <a
+                        href="https://steamcommunity.com/id/spifory"
+                        target="_blank"
+                    >
+                        <Icon name="mdi:steam" /> steam</a
+                    >
+                </div>
+            </div>
+        </header>
+        <br />
+        <body>
+            <div id="about-me" aria-label="About me">
+                <span class="section-header">About Me</span>
+                <p>
+                    I am a <span class="year" data-tooltip="2008"
+                        >{getAge(2008)} year old</span
+                    >
+                    backend software developer based in
+                    <Icon name="twemoji:flag-south-africa" /> South Africa! I've
+                    been interested in the technology/IT aspect for <bold
+                        class="year"
+                        data-tooltip="2017">{getAge(2017)} years</bold
+                    >, but have been programming for <bold
+                        class="year"
+                        data-tooltip="2024">{getAge(2021)} years</bold
+                    > :D.
+                </p>
+                <p>
+                    I'm interested in pop, rap, and R&B music, varying from
+                    artists like Eminem, Lady Gaga, Kendrick Lamar, The Lonely Island, and even <a
+                        href="https://youtube.com/erb">ERB</a
+                    >!
+                    <p>
+                        Right now I'm listening to:
+                        <a
+                            href="https://spotify-github-profile.vercel.app/api/view?uid=31ga2whkv7xgbbjihuyxuu7vgn6m&redirect=true"
+                            ><Image
+                                height="100"
+                                width="320"
+                                src="https://spotify-github-profile.vercel.app/api/view?uid=31ga2whkv7xgbbjihuyxuu7vgn6m&cover_image=true&theme=novatorem&show_offline=true&background_color=190928&interchange=false&bar_color=9486e1&bar_color_cover=false"
+                                alt="spotify-github-profile"
+                                loading="eager"
+                            /></a
+                        >
+                    </p>
+                </p>
+                <p>
+                    When I'm not programming, I am usually involved in a lot of
+                    games (particularly Steam games) such as Portal, Postal,
+                    Celeste, and <a
+                        href="https://steamcommunity.com/id/spifory/games/?tab=all&sort=playtime"
+                        target="_blank">more</a
+                    >.
+                </p>
+                <p>
+                    I know how to program in Python, TypeScript, and Rust
+                    (respectively). I daily-drive Arch Linux with Hyprland —
+                    sometimes GNOME — on on a Dell Lattitude and have been using
+                    Linux since <span class="year" data-tooltip="2023-03-13">March 2023</span> — though I have
+                    been using WSL since <span class="year" data-tooltip="2022-05-19">May 2022</span> — varying
+                    from Ubuntu, Manjaro, EndeavourOS, and finally Arch. Here's a
+                    picture of what it looks like :D
+                </p>
+                <div id="deskop-img">
+                    <a
+                        href="https://github.com/spifory/dotfiles"
+                        target="_blank"
+                        ><Image
+                            src="/messy_desktop_preview.png"
+                            alt="Desktop preview"
+                            height="540"
+                            width="960"
+                            loading="lazy"
+                        /></a
+                    >
+                </div>
+            </div>
+            <div
+                id="projects grid"
+                style="float: right; width: 50%;"
+                aria-label="List of projects"
+            >
+                <span class="section-header">Projects</span>
+                {
+                    projects.map((p) => {
+                        return (
+                            <div>
+                                <Project {...p} />
+                            </div>
+                        );
+                    })
+                }
+            </div>
+        </body>
+    </article>
+
+    <style>
+        * {
+            background-color: var(--pico-color-violet-950);
+        }
+        #me {
+            position: absolute;
+            border-radius: 10px;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: 25px;
+            box-shadow: var(--pico-box-shadow);
+        }
+
+        #small-profile {
+            text-align: center;
+        }
+
+        .section-header {
+            font-size: larger;
+            border-bottom: 2px solid;
+        }
+
+        .year {
+            color: var(--pico-color-purple-650);
+        }
+
+        #about-me {
+            float: left;
+            display: inline;
+            width: 46%;
+            margin-left: 15px;
+        }
+
+        #deskop-img img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        #links a {
+            text-transform: capitalize;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+        a {
+            color: var(--pico-color-indigo-400);
+        }
+
+        a:hover {
+            color: var(--pico-color-indigo-200);
+        }
+
+        #about-me,
+        #small-profile {
+            font-size: larger;
+        }
+    </style>
+</Layout>

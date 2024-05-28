@@ -1,0 +1,75 @@
+---
+interface Props {
+    title: string;
+    description: string;
+}
+
+const { title, description } = Astro.props as Props;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>{title}</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="og:title" content={title} />
+        <meta name="twitter:title" content={title} />
+        <meta name="og:description" content={description} />
+        <meta name="twitter:description" content={description} />
+        <meta name="og:url" content="." />
+        <meta name="twitter:url" content="." />
+        <meta name="og:site_name" content={title} />
+
+        <link rel="icon" href="/spf.png" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.colors.min.css"
+        />
+    </head>
+    <div
+        id="background"
+        style="background-image: url('/back.jpg');"
+        aria-label="Background image of purple images from https://unsplash.com/photos/purple-flowered-hedge-plants-rU_BvpGC8nQ"
+    >
+    </div>
+    <slot />
+
+    <style>
+        :root {
+            --pico-font-family: "Dosis", Ubuntu, sans-serif;
+            --pico-color: var(--pico-color-indigo-400);
+            --pico-background-color: var(--pico-color-zinc-900);
+        }
+        html {
+            height: 100%;
+            text-wrap: wrap;
+        }
+
+        body {
+            height: 100%;
+        }
+
+        #background {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            filter: blur(3px) brightness(95%);
+            height: 100%;
+            width: 100%;
+            pointer-events: none;
+        }
+    </style>
+
+
+</html>
