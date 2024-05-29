@@ -1,11 +1,11 @@
 ---
-import { Image } from 'astro:assets';
-import Layout from '../layouts/Layout.astro';
-import { Icon } from 'astro-icon/components';
-import Project from '../components/Project.astro';
-import projects from '../projects.json';
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+import Project from "../components/Project.astro";
+import projects from "../projects.json";
 
-const description = 'A backend developer that does stuff :D';
+const description = "A backend developer that does stuff :D";
 
 function getAge(year: number) {
     const current = new Date();
@@ -34,6 +34,9 @@ function getAge(year: number) {
                 <div id="links">
                     <a href="mailto:spifory@protonmail.com"
                         ><Icon name="mdi:email" /> email</a
+                    >
+                    <a rel="me" href="https://mastodon.social/@spifory"
+                        ><Icon name="skill-icons:mastodon-light"/> mastodon</a
                     >
                     <a href="https://twitter.com/spifory_" target="_blank"
                         ><Icon name="skill-icons:twitter" /> twitter</a
@@ -73,9 +76,8 @@ function getAge(year: number) {
                 </p>
                 <p>
                     I'm interested in pop, rap, and R&B music, varying from
-                    artists like Eminem, Lady Gaga, Kendrick Lamar, The Lonely Island, and even <a
-                        href="https://youtube.com/erb">ERB</a
-                    >!
+                    artists like Eminem, Lady Gaga, Kendrick Lamar, The Lonely
+                    Island, and even <a href="https://youtube.com/erb">ERB</a>!
                     <p>
                         Right now I'm listening to:
                         <a
@@ -102,10 +104,13 @@ function getAge(year: number) {
                     I know how to program in Python, TypeScript, and Rust
                     (respectively). I daily-drive Arch Linux with Hyprland —
                     sometimes GNOME — on on a Dell Lattitude and have been using
-                    Linux since <span class="year" data-tooltip="2023-03-13">March 2023</span> — though I have
-                    been using WSL since <span class="year" data-tooltip="2022-05-19">May 2022</span> — varying
-                    from Ubuntu, Manjaro, EndeavourOS, and finally Arch. Here's a
-                    picture of what it looks like :D
+                    Linux since <span class="year" data-tooltip="2023-03-13"
+                        >March 2023</span
+                    > — though I have been using WSL since <span
+                        class="year"
+                        data-tooltip="2022-05-19">May 2022</span
+                    > — varying from Ubuntu, Manjaro, EndeavourOS, and finally Arch.
+                    Here's a picture of what it looks like :D
                 </p>
                 <div id="deskop-img">
                     <a
