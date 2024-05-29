@@ -21,6 +21,7 @@ const { title, description } = Astro.props as Props;
         <meta name="og:image" content="/spf.png" />
         <meta name="og:url" content="." />
         <meta name="twitter:url" content="." />
+        <meta name="theme-color" content="#C74FEA" />
         <meta name="og:site_name" content={title} />
 
         <link rel="icon" href="/spf.png" />
@@ -43,11 +44,7 @@ const { title, description } = Astro.props as Props;
             rel="stylesheet"
         />
     </head>
-    <div
-        id="background"
-        style="background-image: url('/back.jpg');"
-    >
-    </div>
+    <div id="background" style="background-image: url('/back.jpg');"></div>
     <slot />
 
     <style>
