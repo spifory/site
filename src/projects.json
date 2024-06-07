@@ -7,18 +7,18 @@
     {
         "name": "site",
         "description": "My personal website. [You're on it right now!]",
-        "url": "https://github.com/spifory/site"
+        "url": "https://codeberg.org/spf/site"
     },
     {
         "name": "stuff-counter",
         "description": "A bot that counts stuff for you on Discord when you feel lazy to!",
         "status": "Archived",
-        "url": "https://github.com/spifory/stuff-counter"
+        "url": "https://codeberg.org/spf/stuff-counter"
     },
     {
         "name": "tags",
         "description": " A Discord bot that helps with previewing your Meta/OpenGraph tags before you use them on your site.",
         "status": "Inactive",
-        "url": "https://github.com/spifory/tags"
+        "url": "https://codeberg.org/spf/tags"
     }
 ]
