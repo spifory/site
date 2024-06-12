@@ -1,10 +1,10 @@
 ---
-import { getCollection } from 'astro:content';
-import { Image } from 'astro:assets';
-import Layout from '../../layouts/Layout.astro';
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import Layout from "../../layouts/Layout.astro";
 
 export const getStaticPaths = async () => {
-    const entries = await getCollection('blog');
+    const entries = await getCollection("blog");
     return entries.map((entry) => ({
         params: { slug: entry.slug },
         props: { entry },
@@ -42,7 +42,23 @@ const { Content } = await entry.render();
                 >
             </h1>
         </header>
-        <Content />
+        <body>
+            <h6>
+                Created on {
+                    entry.data.createdAt.toLocaleDateString("en-US", {
+                        month: "long",
+                        day: "numeric",
+                        year: "numeric",
+                        hour: "numeric",
+                        minute: "numeric",
+                        hour12: false,
+                    })
+                }
+            </h6>
+        </body>
+        <footer>
+            <Content />
+        </footer>
     </article>
 </Layout>
 
