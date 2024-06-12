@@ -1,30 +1,30 @@
 [
-  {
-    "name": "soteria",
-    "description": "The world's least favourite Twitter alternative",
-    "status": "Active (WIP)",
-    "url": "https://codeberg.org/soteria/soteria"
-  },
-  {
-    "name": "video-thing",
-    "description": "A video hosting service.",
-    "status": "Active (WIP)"
-  },
-  {
-    "name": "site",
-    "description": "My personal website. [You're on it right now!]",
-    "url": "https://codeberg.org/spf/site"
-  },
-  {
-    "name": "stuff-counter",
-    "description": "A bot that counts stuff for you on Discord when you feel lazy to!",
-    "status": "Archived",
-    "url": "https://codeberg.org/spf/stuff-counter"
-  },
-  {
-    "name": "tags",
-    "description": " A Discord bot that helps with previewing your Meta/OpenGraph tags before you use them on your site.",
-    "status": "Inactive",
-    "url": "https://codeberg.org/spf/tags"
-  }
+    {
+        "name": "soteria",
+        "description": "The world's least favourite Twitter alternative",
+        "status": "Active (WIP)",
+        "url": "https://codeberg.org/soteria/soteria"
+    },
+    {
+        "name": "video-thing",
+        "description": "A video hosting service.",
+        "status": "Active (WIP)"
+    },
+    {
+        "name": "site",
+        "description": "My personal website. [You're on it right now!]",
+        "url": "https://codeberg.org/spf/site"
+    },
+    {
+        "name": "stuff-counter",
+        "description": "A bot that counts stuff for you on Discord when you feel lazy to!",
+        "status": "Archived",
+        "url": "https://codeberg.org/spf/stuff-counter"
+    },
+    {
+        "name": "tags",
+        "description": " A Discord bot that helps with previewing your Meta/OpenGraph tags before you use them on your site.",
+        "status": "Inactive",
+        "url": "https://codeberg.org/spf/tags"
+    }
 ]
