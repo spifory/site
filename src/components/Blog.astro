@@ -1,0 +1,64 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+    slug: string;
+    title: string;
+    summary: string;
+    createdAt: string;
+    icon?: string;
+}
+
+const { slug, title, summary, icon, createdAt } = Astro.props as Props;
+---
+
+<a href=`/blog/${slug}` id="blog">
+    <article>
+        <h6>
+            {
+                new Date(createdAt).toLocaleDateString("en-US", {
+                    month: "long",
+                    day: "numeric",
+                    year: "numeric",
+                    hour: "numeric",
+                    minute: "numeric",
+                    hour12: false,
+                })
+            }
+        </h6>
+        <h2>
+            {title}
+            {
+                icon && (
+                    <span id="blog-icon">
+                        (
+                        <Image
+                            src={icon}
+                            alt={`${title}'s' icon`}
+                            width="96"
+                            height="96"
+                            loading="eager"
+                        />
+                        )
+                    </span>
+                )
+            }
+        </h2>
+        {summary && <h5>{summary}</h5>}
+    </article>
+</a>
+
+<style>
+    #blog {
+        text-decoration: none;
+    }
+
+    #blog-icon,
+    #blog-date {
+        float: right;
+    }
+
+    img {
+        border-radius: 10px;
+    }
+</style>

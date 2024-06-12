@@ -1,0 +1,56 @@
+---
+import { getCollection } from 'astro:content';
+import Blog from '../../components/Blog.astro';
+import Layout from '../../layouts/Layout.astro';
+
+const posts = (await getCollection('blogs')).sort(
+    // @ts-ignore
+    (a, b) => new Date(b.data.createdAt) - new Date(a.data.createdAt),
+);
+---
+
+<Layout
+    title="blog / spifory"
+    description="A bunch of thoughts and opinions on... things :D"
+>
+    <article>
+        <header>
+            <h1>
+                blog
+                <span style="float: right;" data-tooltip="home"
+                    ><a href="/">/</a></span
+                >
+            </h1>
+        </header>
+        {
+            posts.length
+                ? posts.map((p) => {
+                      return (
+                          <div>
+                              <Blog {...p.data} slug={p.slug} />
+                          </div>
+                      );
+                  })
+                : <h2><em>nothing to talk about yet</em></h2>
+        }
+    </article>
+</Layout>
+
+<style>
+    * {
+        background-color: var(--pico-color-violet-950);
+    }
+    article {
+        position: absolute;
+        border-radius: 10px;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 25px;
+        box-shadow: var(--pico-box-shadow);
+    }
+
+    img {
+        border-radius: 50px;
+    }
+</style>

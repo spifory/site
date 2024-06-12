@@ -1,0 +1,63 @@
+---
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import Layout from "../../layouts/Layout.astro";
+
+export const getStaticPaths = async () => {
+    const entries = await getCollection("blogs");
+    return entries.map((entry) => ({
+        params: { slug: entry.slug },
+        props: { entry },
+    }));
+};
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout
+    title={`${entry.data.title} / blog / spifory`}
+    description={entry.data.summary}
+>
+    <article>
+        <header>
+            <h1>
+                <span id="blog-icon">
+                    {
+                        entry.data.icon && (
+                            <Image
+                                src={entry.data.icon}
+                                alt={`${entry.data.title}'s' icon`}
+                                width="48"
+                                height="48"
+                                loading="eager"
+                            />
+                        )
+                    }
+                </span>
+
+                {entry.data.title}
+                <span style="float: right;" data-tooltip="home"
+                    ><a href="/">/</a></span
+                >
+            </h1>
+        </header>
+        <Content />
+    </article>
+</Layout>
+
+<style>
+    article {
+        position: absolute;
+        border-radius: 10px;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 25px;
+        box-shadow: var(--pico-box-shadow);
+    }
+
+    p {
+        font-weight: larger;
+    }
+</style>
