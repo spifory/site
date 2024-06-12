@@ -1,7 +1,7 @@
 ---
 title: Welcome
 summary: First ever post!!
-createdAt: 2024-06-12 18:43:30+02:00
+createdAt: 2024-06-12 18:43:30
 ---
 
 Welcome to my blog! Over here I will talk about.. stuff!
