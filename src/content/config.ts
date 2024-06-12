@@ -6,9 +6,8 @@ export const collections = {
         schema: z.object({
             title: z.string(),
             summary: z.string(),
-            content: z.string(),
-            icon: z.string(),
-            createdAy: z.string(),
+            icon: z.optional(z.string()),
+            createdAt: z.date(),
         }),
     }),
 };
