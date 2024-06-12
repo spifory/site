@@ -5,18 +5,18 @@ interface Props {
     slug: string;
     title: string;
     summary: string;
-    createdAt: string;
+    createdAt: Date;
     icon?: string;
 }
 
-const { slug, title, summary, icon, createdAt } = Astro.props as Props;
+const { slug, title, summary, createdAt, icon } = Astro.props as Props;
 ---
 
 <a href=`/blog/${slug}` id="blog">
     <article>
         <h6>
             {
-                new Date(createdAt).toLocaleDateString("en-US", {
+                createdAt.toLocaleDateString("en-US", {
                     month: "long",
                     day: "numeric",
                     year: "numeric",
