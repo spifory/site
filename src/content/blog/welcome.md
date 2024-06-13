@@ -2,6 +2,7 @@
 title: Welcome
 summary: First ever post!!
 createdAt: 2024-06-12 18:43:30
+icon: twemoji:waving-hand-medium-skin-tone
 ---
 
 Welcome to my blog! Over here I will talk about.. stuff!

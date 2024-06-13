@@ -1,15 +1,18 @@
 ---
-import { Image } from 'astro:assets';
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 
 interface Props {
     slug: string;
     title: string;
     summary: string;
     createdAt: Date;
+    imageIcon?: string;
     icon?: string;
 }
 
-const { slug, title, summary, createdAt, icon } = Astro.props as Props;
+const { slug, title, summary, createdAt, imageIcon, icon } =
+    Astro.props as Props;
 ---
 
 <a href=`/blog/${slug}` id="blog">
@@ -28,21 +31,22 @@ const { slug, title, summary, createdAt, icon } = Astro.props as Props;
         </h6>
         <h2>
             {title}
-            {
-                icon && (
-                    <span id="blog-icon">
-                        (
+            <span id="blog-icon">
+                {
+                    imageIcon && (
                         <Image
-                            src={icon}
+                            src={imageIcon}
                             alt={`${title}'s' icon`}
                             width="96"
                             height="96"
                             loading="eager"
                         />
-                        )
-                    </span>
-                )
-            }
+                    )
+                }
+                {
+                    icon && <Icon name={icon} />
+                }
+            </span>
         </h2>
         {summary && <h5>{summary}</h5>}
     </article>
