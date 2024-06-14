@@ -14,6 +14,11 @@ export const getStaticPaths = async () => {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+const tweetIntentUrl = new URL("https://twitter.com/intent/tweet");
+tweetIntentUrl.searchParams.append("text", `"${entry.data.title}" at`);
+tweetIntentUrl.searchParams.append("url", Astro.url.toString());
+tweetIntentUrl.searchParams.append("via", "spifory_");
 ---
 
 <Layout
@@ -60,6 +65,16 @@ const { Content } = await entry.render();
         </body>
         <footer>
             <Content />
+        </footer>
+        <footer>
+            <h3>Liked this post? Maybe post about it :D</h3>
+            <a href={tweetIntentUrl}>
+                <button
+                    class="pico-background-azure-350"
+                    style="color: var(--pico-color-zinc-50);"
+                    ><Icon name="mdi:twitter" /> Tweet</button
+                >
+            </a>
         </footer>
     </article>
 </Layout>
