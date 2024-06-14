@@ -17,7 +17,7 @@ const { Content } = await entry.render();
 
 const tweetIntentUrl = new URL("https://twitter.com/intent/tweet");
 tweetIntentUrl.searchParams.append("text", `"${entry.data.title}" at`);
-tweetIntentUrl.searchParams.append("url", Astro.request.url);
+tweetIntentUrl.searchParams.append("url", Astro.url);
 tweetIntentUrl.searchParams.append("via", "spifory_");
 ---
 
