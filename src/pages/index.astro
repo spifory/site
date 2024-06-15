@@ -1,11 +1,11 @@
 ---
-import { Image } from 'astro:assets';
-import Layout from '../layouts/Layout.astro';
-import { Icon } from 'astro-icon/components';
-import Project from '../components/Project.astro';
-import projects from '../projects.json';
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+import Project from "../components/Project.astro";
+import projects from "../projects.json";
 
-const description = 'A backend developer that does stuff :D';
+const description = "A backend developer that does stuff :D";
 
 function getAge(year: number) {
     const current = new Date();
@@ -32,34 +32,33 @@ function getAge(year: number) {
                     {description}
                 </h2>
                 <div id="links">
+                    <div id="grid">
+                        <a href="/blog" class="section-header">/blog</a>
+                    </div>
                     <a href="mailto:spifory@protonmail.com"
-                        ><Icon name="mdi:email" /> email</a
+                        ><Icon name="mdi:email" /> Email</a
                     >
                     <a
                         rel="me"
                         href="https://mastodon.social/@spifory"
                         target="_blank"
-                        ><Icon name="skill-icons:mastodon-light" /> mastodon</a
+                        ><Icon name="skill-icons:mastodon-light" /> Mastodon</a
                     >
                     <a href="https://twitter.com/spifory_" target="_blank"
-                        ><Icon name="skill-icons:twitter" /> twitter</a
+                        ><Icon name="skill-icons:twitter" /> Twitter</a
                     >
                     <a href="https://github.com/spifory" target="_blank"
-                        ><Icon name="skill-icons:github-light" /> github</a
+                        ><Icon name="skill-icons:github-light" /> Github</a
                     >
                     <a href="https://discord.gg/VTPzbjRFpF" target="_blank"
-                        ><Icon name="skill-icons:discord" /> discord
+                        ><Icon name="skill-icons:discord" /> Discord
                     </a>
                     <a
                         href="https://steamcommunity.com/id/spifory"
                         target="_blank"
                     >
-                        <Icon name="mdi:steam" /> steam</a
+                        <Icon name="mdi:steam" /> Steam</a
                     >
-
-                    <div id="grid">
-                        <a href="/blog">blog</a>
-                    </div>
                 </div>
             </div>
         </header>
@@ -120,9 +119,7 @@ function getAge(year: number) {
                     Here's a picture of what it looks like :D
                 </p>
                 <div id="deskop-img">
-                    <a
-                        href="https://codeberg.org/spf/dotfiles"
-                        target="_blank"
+                    <a href="https://codeberg.org/spf/dotfiles" target="_blank"
                         ><Image
                             src="/messy_desktop_preview.png"
                             alt="Desktop preview"
@@ -192,7 +189,6 @@ function getAge(year: number) {
         }
 
         #links a {
-            text-transform: capitalize;
             text-decoration: none;
             margin-left: 15px;
         }
