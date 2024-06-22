@@ -14,6 +14,8 @@ function getAge(year: number) {
 
     return current.getUTCFullYear() - setYear.getUTCFullYear();
 }
+
+const baseSkillIcons = "https://go-skill-icons.vercel.app/api/icons?i=";
 ---
 
 <Layout title="spifory" description={description}>
@@ -36,7 +38,13 @@ function getAge(year: number) {
                         <a href="/blog" class="section-header">/blog</a>
                     </div>
                     <a href="mailto:spifory@protonmail.com"
-                        ><Icon name="mdi:email" /> Email</a
+                        ><Image
+                            src={baseSkillIcons + "proton"}
+                            alt="ProtonMail icon"
+                            width="256"
+                            height="256"
+                            loading="lazy"
+                        /> Email</a
                     >
                     <a
                         rel="me"
@@ -47,8 +55,14 @@ function getAge(year: number) {
                     <a href="https://twitter.com/spifory_" target="_blank"
                         ><Icon name="skill-icons:twitter" /> Twitter</a
                     >
-                    <a href="https://github.com/spifory" target="_blank"
-                        ><Icon name="skill-icons:github-light" /> Github</a
+                    <a href="https://codeberg.org/spf" target="_blank"
+                        ><Image
+                            src={baseSkillIcons + "codeberg"}
+                            alt="Codeberg icon"
+                            width="256"
+                            height="256"
+                            loading="lazy"
+                        /> Codeberg</a
                     >
                     <a href="https://discord.gg/VTPzbjRFpF" target="_blank"
                         ><Icon name="skill-icons:discord" /> Discord
@@ -186,6 +200,11 @@ function getAge(year: number) {
         #deskop-img img {
             max-width: 100%;
             height: auto;
+        }
+
+        #links img {
+            height: 1em;
+            width: 1em;
         }
 
         #links a {
